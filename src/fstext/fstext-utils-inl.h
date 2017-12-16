@@ -215,6 +215,61 @@ bool GetLinearSymbolSequence(const Fst<Arc> &fst,
   }
 }
 
+//gop
+template<class Arc, class I>
+bool GetLinearSymbolSequence(const Fst<Arc> &fst,
+                             vector<I> *isymbols_out,
+                             vector<I> *osymbols_out,
+                             typename Arc::Weight *tot_weight_out,
+			     int gop) {
+  typedef typename Arc::StateId StateId;
+  typedef typename Arc::Weight Weight;
+
+  Weight tot_weight = Weight::One();
+  vector<I> ilabel_seq;
+  vector<I> olabel_seq;
+
+  StateId cur_state = fst.Start();
+  if (cur_state == kNoStateId) {  // empty sequence.
+    if (isymbols_out != NULL) isymbols_out->clear();
+    if (osymbols_out != NULL) osymbols_out->clear();
+    if (tot_weight_out != NULL) *tot_weight_out = Weight::Zero();
+    return true;
+  }
+  
+  float oneframe_like=0.0;
+  float sum_frame_like=0.0;
+  int num_framexx=0;
+  while (1) {
+    Weight w = fst.Final(cur_state);
+    if (w != Weight::Zero()) {  // is final..
+      tot_weight = Times(w, tot_weight);
+      if (fst.NumArcs(cur_state) != 0) return false;
+      if (isymbols_out != NULL) *isymbols_out = ilabel_seq;
+      if (osymbols_out != NULL) *osymbols_out = olabel_seq;
+      if (tot_weight_out != NULL) *tot_weight_out = tot_weight;
+      return true;
+    } else {
+      if (fst.NumArcs(cur_state) != 1) return false;
+
+      ArcIterator<Fst<Arc> > iter(fst, cur_state);  // get the only arc.
+      const Arc &arc = iter.Value();
+      tot_weight = Times(arc.weight, tot_weight);
+      
+      //add 
+      if (arc.ilabel !=0) {
+	oneframe_like = -(tot_weight.Value2()) - sum_frame_like;
+	sum_frame_like = -(tot_weight.Value2());
+	KALDI_LOG << " oneframe like is " << oneframe_like << " while xend is " << num_framexx;
+	num_framexx++;
+	}
+
+      if (arc.ilabel != 0) ilabel_seq.push_back(arc.ilabel);
+      if (arc.olabel != 0) olabel_seq.push_back(arc.olabel);
+      cur_state = arc.nextstate;
+    }
+  }
+}
 
 // see fstext-utils.sh for comment.
 template<class Arc>

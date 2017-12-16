@@ -72,6 +72,24 @@ void AlignUtteranceWrapper(
     int64 *frame_count,
     BaseFloatVectorWriter *per_frame_acwt_writer = NULL);
 
+//gop
+void AlignUtteranceWrapper(
+    const AlignConfig &config,
+    const std::string &utt,
+    BaseFloat acoustic_scale,  // affects scores written to scores_writer, if
+                               // present
+    fst::VectorFst<fst::StdArc> *fst,  // non-const in case config.careful ==
+                                       // true, we add loop.
+    DecodableInterface *decodable,  // not const but is really an input.
+    Int32VectorWriter *alignment_writer,
+    BaseFloatWriter *scores_writer,
+    int32 *num_done,
+    int32 *num_error,
+    int32 *num_retried,
+    double *tot_like,
+    int64 *frame_count,
+    int gop,
+    BaseFloatVectorWriter *per_frame_acwt_writer = NULL);
 
 
 /// This function modifies the decoding graph for what we call "careful
@@ -109,6 +127,23 @@ bool DecodeUtteranceLatticeFaster(
     CompactLatticeWriter *compact_lattice_writer,
     LatticeWriter *lattice_writer,
     double *like_ptr);  // puts utterance's likelihood in like_ptr on success.
+
+//gop
+
+bool DecodeUtteranceLatticeFaster(
+    LatticeFasterDecoder &decoder, // not const but is really an input.
+    DecodableInterface &decodable, // not const but is really an input.
+    const TransitionModel &trans_model,
+    const fst::SymbolTable *word_syms,
+    std::string utt,
+    double acoustic_scale,
+    bool determinize,
+    bool allow_partial,
+    Int32VectorWriter *alignments_writer,
+    Int32VectorWriter *words_writer,
+    CompactLatticeWriter *compact_lattice_writer,
+    LatticeWriter *lattice_writer,
+    double *like_ptr,int gop);  // puts utterance's likelihood in like_ptr on success.
 
 /// This class basically does the same job as the function
 /// DecodeUtteranceLatticeFaster, but in a way that allows us
