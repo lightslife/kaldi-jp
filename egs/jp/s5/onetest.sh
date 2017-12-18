@@ -9,9 +9,15 @@ if [ $# != 3 ] ; then
 	exit 1;
 fi
 
-lang=lang_sen
-targetexp=tri2_sen
-targetexpali=tri2_sen_one_ali 
+lang=lang_phone 
+targetexp=tri1_phone
+targetexpali=tri1_phone_one_ali 
+#lang=lang_word
+#targetexp=tri2_word
+#targetexpali=tri2_word_one_ali 
+#lang=lang_sen
+#targetexp=tri2_sen
+#targetexpali=tri2_sen_one_ali 
 
 #backup
 cp $1 temp-speech/
