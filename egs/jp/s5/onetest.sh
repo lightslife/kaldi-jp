@@ -9,8 +9,9 @@ if [ $# != 3 ] ; then
 	exit 1;
 fi
 
-targetexp=tri2
-targetexpali=tri2_one_ali 
+lang=lang_sen
+targetexp=tri2_sen
+targetexpali=tri2_sen_one_ali 
 
 #backup
 cp $1 temp-speech/
@@ -38,7 +39,7 @@ echo $num_phone_ali
 steps/make_mfcc_pitch.sh --cmd "$train_cmd" --nj 1 $onetest  exp/make_mfcc/$onetest_dir  mfcc_one/$onetest_dir
 steps/compute_cmvn_stats.sh $onetest exp/make_mfcc/$onetest_dir mfcc_one/$onetest_dir
 #align
-steps/align_si_gop.sh --boost-silence 1.25 --nj 1 --cmd "$train_cmd"  $onetest data/lang exp/$targetexp exp/$targetexpali/$onetest_dir
+steps/align_si_gop.sh --boost-silence 1.25 --nj 1 --cmd "$train_cmd"  $onetest data/$lang exp/$targetexp exp/$targetexpali/$onetest_dir
 ali-to-phones --write-lengths=true exp/$targetexp/final.mdl "ark:gunzip -c exp/$targetexpali/$onetest_dir/ali.1.gz|"  ark,t:exp/$targetexpali/$onetest_dir/1.ctm
 rm -rf exp/$targetexp/decode_onetest_$onetest_dir
 ## decode
