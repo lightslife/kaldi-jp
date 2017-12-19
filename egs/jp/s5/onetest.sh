@@ -9,15 +9,6 @@ if [ $# != 3 ] ; then
 	exit 1;
 fi
 
-lang=lang_phone 
-targetexp=tri1_phone
-targetexpali=tri1_phone_one_ali 
-#lang=lang_word
-#targetexp=tri2_word
-#targetexpali=tri2_word_one_ali 
-#lang=lang_sen
-#targetexp=tri2_sen
-#targetexpali=tri2_sen_one_ali 
 
 #backup
 cp $1 temp-speech/
@@ -37,8 +28,31 @@ mkdir -p $onetest
 echo "answer" $1  >  $onetest/wav.scp
 echo "answer answer" > $onetest/spk2utt 
 echo "answer " $2 > $onetest/text
+echo $2 | sed 's/ \+/ /g'   | sed 's/^[ \t ]*//g' |  sed 's/[ \t ]*$//g' > $onetest/find_target
 cp $onetest/spk2utt $onetest/utt2spk
 num_phone_ali= echo $2 | awk '{ print NF }' 
+#check it 
+eval $(awk ' NR==FNR { a[$0]=1 } NR>FNR { if(a[$0]==1) printf("vartarget1='word'")  }' $onetest/find_target phone-word-sen/word   )
+eval $(awk ' NR==FNR { a[$0]=1 } NR>FNR { if(a[$0]==1) printf("vartarget2='sen'")  }' $onetest/find_target phone-word-sen/sen   )
+eval $(awk ' NR==FNR { a[$0]=1 } NR>FNR { if(a[$0]==1) printf("vartarget3='phone'")  }' $onetest/find_target phone-word-sen/phone   )
+if [ "$vartarget1"x = "word"x ]; then
+    lang=lang_word
+    targetexp=tri2_word
+    targetexpali=tri2_word_one_ali 
+fi
+
+if [ "$vartarget2"x = "sen"x ]; then
+    lang=lang_sen
+    targetexp=tri2_sen
+    targetexpali=tri2_sen_one_ali 
+fi 
+
+if [ "$vartarget3"x = "phone"x ]; then
+    lang=lang_phone 
+    targetexp=tri1_phone
+    targetexpali=tri1_phone_one_ali 
+fi 
+
 echo $num_phone_ali
 #prepare fea
 
