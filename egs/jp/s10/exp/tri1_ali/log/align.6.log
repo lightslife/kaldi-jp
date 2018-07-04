@@ -1,0 +1,78 @@
+# compile-train-graphs --read-disambig-syms=data/lang/phones/disambig.int exp/tri1_ali/tree exp/tri1_ali/final.mdl data/lang/L.fst "ark:utils/sym2int.pl --map-oov 3 -f 2- data/lang/words.txt data/train/split6/6/text|" ark:- | gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 --careful=false "gmm-boost-silence --boost=1.0 1 exp/tri1_ali/final.mdl - |" ark:- "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split6/6/utt2spk scp:data/train/split6/6/cmvn.scp scp:data/train/split6/6/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark,t:|gzip -c >exp/tri1_ali/ali.6.gz" 
+# Started at Thu May 10 00:25:11 HKT 2018
+#
+compile-train-graphs --read-disambig-syms=data/lang/phones/disambig.int exp/tri1_ali/tree exp/tri1_ali/final.mdl data/lang/L.fst 'ark:utils/sym2int.pl --map-oov 3 -f 2- data/lang/words.txt data/train/split6/6/text|' ark:- 
+gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 --careful=false 'gmm-boost-silence --boost=1.0 1 exp/tri1_ali/final.mdl - |' ark:- 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split6/6/utt2spk scp:data/train/split6/6/cmvn.scp scp:data/train/split6/6/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark,t:|gzip -c >exp/tri1_ali/ali.6.gz' 
+gmm-boost-silence --boost=1.0 1 exp/tri1_ali/final.mdl - 
+WARNING (gmm-boost-silence[5.3.4~1340-b701]:main():gmm-boost-silence.cc:82) The pdfs for the silence phones may be shared by other phones (note: this probably does not matter.)
+LOG (gmm-boost-silence[5.3.4~1340-b701]:main():gmm-boost-silence.cc:93) Boosted weights for 5 pdfs, by factor of 1
+LOG (gmm-boost-silence[5.3.4~1340-b701]:main():gmm-boost-silence.cc:103) Wrote model to -
+apply-cmvn --utt2spk=ark:data/train/split6/6/utt2spk scp:data/train/split6/6/cmvn.scp scp:data/train/split6/6/feats.scp ark:- 
+add-deltas ark:- ark:- 
+LOG (apply-cmvn[5.3.4~1340-b701]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 5 utterances, errors on 0
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker035-04
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker035-06
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker035-07
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker035-08
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker035-10
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker036-01
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker036-02
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker036-03
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker036-04
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker036-05
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker036-06
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker036-07
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker036-08
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker036-09
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker036-10
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker037-02
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker037-03
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker037-05
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker037-06
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker037-07
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker037-08
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker037-09
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker037-10
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker038-01
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker038-02
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker038-03
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker038-04
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker038-05
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker038-06
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker038-07
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker038-08
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker038-09
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker038-10
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker039-01
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker039-02
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker039-03
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker039-04
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker039-05
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker039-06
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker039-07
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker039-08
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker039-09
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker039-10
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker040-01
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker040-02
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker040-03
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker040-04
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker040-06
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker040-07
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker040-08
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker040-09
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker040-10
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker041-01
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker041-02
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker041-03
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker041-05
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker041-07
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker041-08
+LOG (compile-train-graphs[5.3.4~1340-b701]:main():compile-train-graphs.cc:147) compile-train-graphs: succeeded for 60 graphs, failed for 0
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker041-09
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:103) No features for utterance jp10-speaker041-10
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:135) Overall log-likelihood per frame is -75.8702 over 770 frames.
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:137) Retried 0 out of 60 utterances.
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:139) Done 5, errors on 55
+# Accounting: time=0 threads=1
+# Ended (code 0) at Thu May 10 00:25:11 HKT 2018, elapsed time 0 seconds

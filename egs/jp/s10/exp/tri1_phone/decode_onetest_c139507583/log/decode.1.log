@@ -1,0 +1,83 @@
+# gmm-latgen-faster-gop --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/tri1_phone/graph/words.txt exp/tri1_phone/final.mdl exp/tri1_phone/graph/HCLG.fst "ark,s,cs:apply-cmvn  --utt2spk=ark:data/c139507583/split1/1/utt2spk scp:data/c139507583/split1/1/cmvn.scp scp:data/c139507583/split1/1/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark:|gzip -c > exp/tri1_phone/decode_onetest_c139507583/lat.1.gz" 
+# Started at Tue Jan 16 00:15:08 HKT 2018
+#
+gmm-latgen-faster-gop --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/tri1_phone/graph/words.txt exp/tri1_phone/final.mdl exp/tri1_phone/graph/HCLG.fst 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/c139507583/split1/1/utt2spk scp:data/c139507583/split1/1/cmvn.scp scp:data/c139507583/split1/1/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark:|gzip -c > exp/tri1_phone/decode_onetest_c139507583/lat.1.gz' 
+apply-cmvn --utt2spk=ark:data/c139507583/split1/1/utt2spk scp:data/c139507583/split1/1/cmvn.scp scp:data/c139507583/split1/1/feats.scp ark:- 
+add-deltas ark:- ark:- 
+LOG (apply-cmvn[5.3.4~1340-b701]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 1 utterances, errors on 0
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -4.87914 while xend is 0
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -4.96028 while xend is 1
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.59482 while xend is 2
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.77793 while xend is 3
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -7.13237 while xend is 4
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.33944 while xend is 5
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.51323 while xend is 6
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.12549 while xend is 7
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.11793 while xend is 8
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.8952 while xend is 9
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.77758 while xend is 10
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.80754 while xend is 11
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.75994 while xend is 12
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.50559 while xend is 13
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.80676 while xend is 14
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.48044 while xend is 15
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.75618 while xend is 16
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.47951 while xend is 17
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.78886 while xend is 18
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.78754 while xend is 19
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.67237 while xend is 20
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -7.42194 while xend is 21
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -7.66141 while xend is 22
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -8.13211 while xend is 23
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -8.38303 while xend is 24
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -8.08948 while xend is 25
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -7.10883 while xend is 26
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.47147 while xend is 27
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.9287 while xend is 28
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.95525 while xend is 29
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.54855 while xend is 30
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -4.88124 while xend is 31
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.11734 while xend is 32
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -4.81645 while xend is 33
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -4.72137 while xend is 34
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -4.92397 while xend is 35
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.11908 while xend is 36
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.41278 while xend is 37
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.52863 while xend is 38
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.52446 while xend is 39
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.47733 while xend is 40
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.00015 while xend is 41
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.21988 while xend is 42
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -4.89471 while xend is 43
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.36234 while xend is 44
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.72595 while xend is 45
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.1633 while xend is 46
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.65991 while xend is 47
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -7.11609 while xend is 48
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -7.35635 while xend is 49
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -7.27814 while xend is 50
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -7.80777 while xend is 51
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -7.57361 while xend is 52
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -8.3573 while xend is 53
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.87921 while xend is 54
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -7.24185 while xend is 55
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.88632 while xend is 56
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.7706 while xend is 57
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.80768 while xend is 58
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.23605 while xend is 59
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -4.92059 while xend is 60
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -4.82605 while xend is 61
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -4.93582 while xend is 62
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -4.92758 while xend is 63
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.06973 while xend is 64
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.47275 while xend is 65
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.7869 while xend is 66
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.92502 while xend is 67
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.58737 while xend is 68
+answer す 
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:384) Log-like per frame for utterance answer is -6.16665 over 69 frames.
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:main():gmm-latgen-faster-gop.cc:177) Time taken 0.0604999s: real-time factor assuming 100 frames/sec is 0.087681
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:main():gmm-latgen-faster-gop.cc:180) Done 1 utterances, failed for 0
+LOG (gmm-latgen-faster-gop[5.3.4~1340-b701]:main():gmm-latgen-faster-gop.cc:182) Overall log-likelihood per frame is -6.16665 over 69 frames.
+# Accounting: time=0 threads=1
+# Ended (code 0) at Tue Jan 16 00:15:08 HKT 2018, elapsed time 0 seconds

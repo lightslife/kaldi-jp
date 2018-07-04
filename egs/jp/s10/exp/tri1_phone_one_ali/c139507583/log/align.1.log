@@ -1,0 +1,88 @@
+# compile-train-graphs --read-disambig-syms=data/lang_phone/phones/disambig.int exp/tri1_phone_one_ali/c139507583/tree exp/tri1_phone_one_ali/c139507583/final.mdl data/lang_phone/L.fst "ark:utils/sym2int.pl --map-oov 3 -f 2- data/lang_phone/words.txt data/c139507583/split1/1/text|" ark:- | gmm-align-compiled-gop --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 --careful=false "gmm-boost-silence --boost=1.25 1 exp/tri1_phone_one_ali/c139507583/final.mdl - |" ark:- "ark,s,cs:apply-cmvn  --utt2spk=ark:data/c139507583/split1/1/utt2spk scp:data/c139507583/split1/1/cmvn.scp scp:data/c139507583/split1/1/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark,t:|gzip -c >exp/tri1_phone_one_ali/c139507583/ali.1.gz" 
+# Started at Tue Jan 16 00:15:08 HKT 2018
+#
+gmm-align-compiled-gop --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 --careful=false 'gmm-boost-silence --boost=1.25 1 exp/tri1_phone_one_ali/c139507583/final.mdl - |' ark:- 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/c139507583/split1/1/utt2spk scp:data/c139507583/split1/1/cmvn.scp scp:data/c139507583/split1/1/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark,t:|gzip -c >exp/tri1_phone_one_ali/c139507583/ali.1.gz' 
+compile-train-graphs --read-disambig-syms=data/lang_phone/phones/disambig.int exp/tri1_phone_one_ali/c139507583/tree exp/tri1_phone_one_ali/c139507583/final.mdl data/lang_phone/L.fst 'ark:utils/sym2int.pl --map-oov 3 -f 2- data/lang_phone/words.txt data/c139507583/split1/1/text|' ark:- 
+gmm-boost-silence --boost=1.25 1 exp/tri1_phone_one_ali/c139507583/final.mdl - 
+LOG (compile-train-graphs[5.3.4~1340-b701]:main():compile-train-graphs.cc:147) compile-train-graphs: succeeded for 1 graphs, failed for 0
+WARNING (gmm-boost-silence[5.3.4~1340-b701]:main():gmm-boost-silence.cc:82) The pdfs for the silence phones may be shared by other phones (note: this probably does not matter.)
+LOG (gmm-boost-silence[5.3.4~1340-b701]:main():gmm-boost-silence.cc:93) Boosted weights for 5 pdfs, by factor of 1.25
+LOG (gmm-boost-silence[5.3.4~1340-b701]:main():gmm-boost-silence.cc:103) Wrote model to -
+apply-cmvn --utt2spk=ark:data/c139507583/split1/1/utt2spk scp:data/c139507583/split1/1/cmvn.scp scp:data/c139507583/split1/1/feats.scp ark:- 
+LOG (apply-cmvn[5.3.4~1340-b701]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 1 utterances, errors on 0
+add-deltas ark:- ark:- 
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:main():gmm-align-compiled-gop.cc:127) answer
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.83268 while xend is 0
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.93005 while xend is 1
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.6915 while xend is 2
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.91123 while xend is 3
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -8.53656 while xend is 4
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -7.60736 while xend is 5
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -7.8159 while xend is 6
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -7.35062 while xend is 7
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -7.34154 while xend is 8
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -8.27427 while xend is 9
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.93312 while xend is 10
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.96908 while xend is 11
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.91196 while xend is 12
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.60674 while xend is 13
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.96813 while xend is 14
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.57655 while xend is 15
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.90745 while xend is 16
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.57543 while xend is 17
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.94666 while xend is 18
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.94507 while xend is 19
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -8.00688 while xend is 20
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -8.90636 while xend is 21
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -9.19374 while xend is 22
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -9.75858 while xend is 23
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -10.0597 while xend is 24
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -9.70741 while xend is 25
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -8.53062 while xend is 26
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -7.76579 while xend is 27
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -8.31447 while xend is 28
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -7.14632 while xend is 29
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.65829 while xend is 30
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.8575 while xend is 31
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.14084 while xend is 32
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.77977 while xend is 33
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.66568 while xend is 34
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.90878 while xend is 35
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.14291 while xend is 36
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.49536 while xend is 37
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.63437 while xend is 38
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.62936 while xend is 39
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.57281 while xend is 40
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.00021 while xend is 41
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.26389 while xend is 42
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.87369 while xend is 43
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.43484 while xend is 44
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.87115 while xend is 45
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -7.39597 while xend is 46
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -7.99194 while xend is 47
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -8.53934 while xend is 48
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -8.82767 while xend is 49
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -8.7338 while xend is 50
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -9.36935 while xend is 51
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -9.08835 while xend is 52
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -10.0288 while xend is 53
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -8.23276 while xend is 54
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -8.66794 while xend is 55
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -7.04132 while xend is 56
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.90244 while xend is 57
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.94693 while xend is 58
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.26099 while xend is 59
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.88242 while xend is 60
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.76898 while xend is 61
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.9007 while xend is 62
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -5.89081 while xend is 63
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.0614 while xend is 64
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.54501 while xend is 65
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.922 while xend is 66
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -7.08774 while xend is 67
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:GetLinearSymbolSequence():fstext/fstext-utils-inl.h:263)  oneframe like is -6.68256 while xend is 68
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:main():gmm-align-compiled-gop.cc:136) Overall log-likelihood per frame is -72.9515 over 69 frames.
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:main():gmm-align-compiled-gop.cc:138) Retried 0 out of 1 utterances.
+LOG (gmm-align-compiled-gop[5.3.4~1340-b701]:main():gmm-align-compiled-gop.cc:140) Done 1, errors on 0
+# Accounting: time=0 threads=1
+# Ended (code 0) at Tue Jan 16 00:15:08 HKT 2018, elapsed time 0 seconds

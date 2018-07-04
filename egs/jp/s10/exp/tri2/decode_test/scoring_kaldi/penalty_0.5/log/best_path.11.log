@@ -1,0 +1,48 @@
+# lattice-scale --inv-acoustic-scale=11 "ark:gunzip -c exp/tri2/decode_test/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=0.5 ark:- ark:- | lattice-best-path --word-symbol-table=exp/tri2/graph/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- exp/tri2/graph/words.txt | cat > exp/tri2/decode_test/scoring_kaldi/penalty_0.5/11.txt 
+# Started at Thu May 10 00:25:25 HKT 2018
+#
+lattice-add-penalty --word-ins-penalty=0.5 ark:- ark:- 
+lattice-best-path --word-symbol-table=exp/tri2/graph/words.txt ark:- ark,t:- 
+lattice-scale --inv-acoustic-scale=11 'ark:gunzip -c exp/tri2/decode_test/lat.*.gz|' ark:- 
+LOG (lattice-scale[5.3.4~1340-b701]:main():lattice-scale.cc:90) Done 18 lattices.
+LOG (lattice-add-penalty[5.3.4~1340-b701]:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 18 lattices.
+LOG (lattice-best-path[5.3.4~1340-b701]:main():lattice-best-path.cc:99) For utterance jp10-speaker003-07, best cost 31.1719 + 992.019 = 1023.19 over 186 frames.
+jp10-speaker003-07 ど う し た ん で す か 
+LOG (lattice-best-path[5.3.4~1340-b701]:main():lattice-best-path.cc:99) For utterance jp10-speaker004-04, best cost 23.2358 + 875.177 = 898.412 over 160 frames.
+jp10-speaker004-04 し ん じ ら れ な い 
+LOG (lattice-best-path[5.3.4~1340-b701]:main():lattice-best-path.cc:99) For utterance jp10-speaker005-06, best cost 23.6628 + 764.319 = 787.982 over 145 frames.
+jp10-speaker005-06 よ く わ か ん な い 
+LOG (lattice-best-path[5.3.4~1340-b701]:main():lattice-best-path.cc:99) For utterance jp10-speaker010-02, best cost 18.8759 + 554.428 = 573.304 over 112 frames.
+jp10-speaker010-02 が っ か り だ よ 
+LOG (lattice-best-path[5.3.4~1340-b701]:main():lattice-best-path.cc:99) For utterance jp10-speaker011-06, best cost 24.1252 + 814.491 = 838.616 over 176 frames.
+jp10-speaker011-06 よ く わ か ん な い 
+LOG (lattice-best-path[5.3.4~1340-b701]:main():lattice-best-path.cc:99) For utterance jp10-speaker014-07, best cost 29.3771 + 978.954 = 1008.33 over 203 frames.
+jp10-speaker014-07 ど う し た ん で す か 
+LOG (lattice-best-path[5.3.4~1340-b701]:main():lattice-best-path.cc:99) For utterance jp10-speaker015-08, best cost 22.0202 + 695.924 = 717.945 over 135 frames.
+jp10-speaker015-08 た す か り ま す 
+LOG (lattice-best-path[5.3.4~1340-b701]:main():lattice-best-path.cc:99) For utterance jp10-speaker016-02, best cost 18.2419 + 638.547 = 656.789 over 113 frames.
+jp10-speaker016-02 が っ か り だ よ 
+LOG (lattice-best-path[5.3.4~1340-b701]:main():lattice-best-path.cc:99) For utterance jp10-speaker020-10, best cost 19.4291 + 612.725 = 632.154 over 97 frames.
+jp10-speaker020-10 つ か し た 
+LOG (lattice-best-path[5.3.4~1340-b701]:main():lattice-best-path.cc:99) For utterance jp10-speaker021-09, best cost 23.4724 + 595.093 = 618.565 over 109 frames.
+jp10-speaker021-09 か ぜ ひ い ち ゃ う よ 
+LOG (lattice-best-path[5.3.4~1340-b701]:main():lattice-best-path.cc:99) For utterance jp10-speaker023-10, best cost 22.6042 + 695.288 = 717.892 over 132 frames.
+jp10-speaker023-10 つ か れ ま し た 
+LOG (lattice-best-path[5.3.4~1340-b701]:main():lattice-best-path.cc:99) For utterance jp10-speaker024-04, best cost 22.7349 + 873.78 = 896.515 over 152 frames.
+jp10-speaker024-04 し ん じ ら れ な い 
+LOG (lattice-best-path[5.3.4~1340-b701]:main():lattice-best-path.cc:99) For utterance jp10-speaker026-08, best cost 22.4524 + 571.307 = 593.759 over 115 frames.
+jp10-speaker026-08 た す か り ま す 
+LOG (lattice-best-path[5.3.4~1340-b701]:main():lattice-best-path.cc:99) For utterance jp10-speaker030-08, best cost 23.6528 + 906.151 = 929.804 over 177 frames.
+jp10-speaker030-08 た す か り ま す 
+LOG (lattice-best-path[5.3.4~1340-b701]:main():lattice-best-path.cc:99) For utterance jp10-speaker035-01, best cost 23.8044 + 858.308 = 882.113 over 170 frames.
+jp10-speaker035-01 お か し い な あ 
+LOG (lattice-best-path[5.3.4~1340-b701]:main():lattice-best-path.cc:99) For utterance jp10-speaker035-09, best cost 25.0513 + 942.373 = 967.424 over 187 frames.
+jp10-speaker035-09 か ぜ ひ い ち ゃ う よ 
+LOG (lattice-best-path[5.3.4~1340-b701]:main():lattice-best-path.cc:99) For utterance jp10-speaker037-01, best cost 22.3641 + 620.678 = 643.042 over 119 frames.
+jp10-speaker037-01 お か し い な あ 
+LOG (lattice-best-path[5.3.4~1340-b701]:main():lattice-best-path.cc:99) For utterance jp10-speaker037-04, best cost 22.2374 + 689.854 = 712.091 over 139 frames.
+jp10-speaker037-04 し ん じ ら れ な い 
+LOG (lattice-best-path[5.3.4~1340-b701]:main():lattice-best-path.cc:124) Overall cost per frame is 5.36655 = 0.159312 [graph] + 5.20724 [acoustic] over 2627 frames.
+LOG (lattice-best-path[5.3.4~1340-b701]:main():lattice-best-path.cc:128) Done 18 lattices, failed for 0
+# Accounting: time=0 threads=1
+# Ended (code 0) at Thu May 10 00:25:25 HKT 2018, elapsed time 0 seconds

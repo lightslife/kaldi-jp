@@ -1,0 +1,15 @@
+# gunzip -c exp/tri1_one_ali/140b8d79a8/phone_stats.*.gz | steps/diagnostic/analyze_phone_length_stats.py data/lang 
+# Started at Wed May 23 16:56:48 HKT 2018
+#
+At utterance begin, sil accounts for 100.0% of phone occurrences, with duration (median, mean, 95-percentile) is (94,94.0,94) frames.
+At utterance end, sil accounts for 100.0% of phone occurrences, with duration (median, mean, 95-percentile) is (46,46.0,46) frames.
+Overall, sil accounts for 57.1% of phone occurrences, with duration (median, mean, 95-percentile) is (23,46.0,46) frames.
+Overall, spn_S accounts for 28.6% of phone occurrences, with duration (median, mean, 95-percentile) is (4,58.5,4) frames.
+Overall, nonsilence accounts for 14.3% of phone occurrences, with duration (median, mean, 95-percentile) is (4,4.0,4) frames.
+Overall, ね_S accounts for 14.3% of phone occurrences, with duration (median, mean, 95-percentile) is (4,4.0,4) frames.
+The optional-silence phone sil occupies 60.3% of frames overall 
+Limiting the stats to the 54.1% of frames not covered by an utterance-[begin/end] phone, optional-silence sil occupies 26.7% of frames.
+Assuming 100 frames per second, the alignments represent 0.0 hours of data, or 0.0 hours if sil frames are excluded.
+Utterance-internal optional-silences sil comprise 40.0% of utterance-internal phones, with duration (median, mean, 95-percentile) = (21,22.0,21)
+# Accounting: time=0 threads=1
+# Ended (code 0) at Wed May 23 16:56:48 HKT 2018, elapsed time 0 seconds

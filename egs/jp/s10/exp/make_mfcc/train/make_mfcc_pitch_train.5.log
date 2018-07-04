@@ -1,0 +1,82 @@
+# paste-feats --length-tolerance=2 "ark:compute-mfcc-feats  --verbose=2 --config=conf/mfcc.conf scp,p:exp/make_mfcc/train/wav_train.5.scp ark:- |" "ark,s,cs:compute-kaldi-pitch-feats --verbose=2 --config=conf/pitch.conf scp,p:exp/make_mfcc/train/wav_train.5.scp ark:- | process-kaldi-pitch-feats  ark:- ark:- |" ark:- | copy-feats --compress=true ark:- ark,scp:/home/newtranx_voice/jp-10/mfcc/raw_mfcc_pitch_train.5.ark,/home/newtranx_voice/jp-10/mfcc/raw_mfcc_pitch_train.5.scp 
+# Started at Thu May 10 00:24:42 HKT 2018
+#
+paste-feats --length-tolerance=2 'ark:compute-mfcc-feats  --verbose=2 --config=conf/mfcc.conf scp,p:exp/make_mfcc/train/wav_train.5.scp ark:- |' 'ark,s,cs:compute-kaldi-pitch-feats --verbose=2 --config=conf/pitch.conf scp,p:exp/make_mfcc/train/wav_train.5.scp ark:- | process-kaldi-pitch-feats  ark:- ark:- |' ark:- 
+copy-feats --compress=true ark:- ark,scp:/home/newtranx_voice/jp-10/mfcc/raw_mfcc_pitch_train.5.ark,/home/newtranx_voice/jp-10/mfcc/raw_mfcc_pitch_train.5.scp 
+compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:exp/make_mfcc/train/wav_train.5.scp ark:- 
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker029-02
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker029-03
+process-kaldi-pitch-feats ark:- ark:- 
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker029-04
+compute-kaldi-pitch-feats --verbose=2 --config=conf/pitch.conf scp,p:exp/make_mfcc/train/wav_train.5.scp ark:- 
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker029-05
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker029-06
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker029-07
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker029-08
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker029-09
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker029-10
+LOG (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:172) Processed 10 utterances
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker030-01
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker030-02
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker030-03
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker030-04
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker030-05
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker030-06
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker030-07
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker030-09
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker030-10
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker031-01
+LOG (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:172) Processed 20 utterances
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker031-02
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker031-03
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker031-04
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker031-05
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker031-06
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker031-07
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker031-08
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker031-09
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker031-10
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker032-01
+LOG (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:172) Processed 30 utterances
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker032-02
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker032-03
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker032-04
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker032-05
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker032-06
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker032-07
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker032-08
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker032-09
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker032-10
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker033-01
+LOG (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:172) Processed 40 utterances
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker033-02
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker033-03
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker033-04
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker033-05
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker033-06
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker033-07
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker033-08
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker033-09
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker033-10
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker034-01
+LOG (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:172) Processed 50 utterances
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker034-02
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker034-03
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker034-04
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker034-05
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker034-06
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker034-07
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker034-08
+VLOG[2] (compute-kaldi-pitch-feats[5.3.4~1340-b701]:main():compute-kaldi-pitch-feats.cc:107) Processed 50 utterances
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker034-09
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker034-10
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker035-02
+LOG (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:172) Processed 60 utterances
+VLOG[2] (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:173) Processed features for key jp10-speaker035-03
+LOG (compute-mfcc-feats[5.3.4~1340-b701]:main():compute-mfcc-feats.cc:176)  Done 60 out of 60 utterances.
+LOG (compute-kaldi-pitch-feats[5.3.4~1340-b701]:main():compute-kaldi-pitch-feats.cc:110) Done 60 utterances, 0 with errors.
+LOG (process-kaldi-pitch-feats[5.3.4~1340-b701]:main():process-kaldi-pitch-feats.cc:85) Post-processed pitch for 60 utterances.
+LOG (paste-feats[5.3.4~1340-b701]:main():paste-feats.cc:158) Done 60 utts, errors on 0
+LOG (copy-feats[5.3.4~1340-b701]:main():copy-feats.cc:143) Copied 60 feature matrices.
+# Accounting: time=1 threads=1
+# Ended (code 0) at Thu May 10 00:24:43 HKT 2018, elapsed time 1 seconds

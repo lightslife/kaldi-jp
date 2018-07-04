@@ -1,0 +1,11 @@
+sil sil_B sil_E sil_I sil_S spn spn_B spn_E spn_I spn_S
+あ_B あ_E あ_I あ_S い_B い_E い_I い_S う_B う_E う_I う_S お_B お_E お_I お_S か_B か_E か_I か_S が_B が_E が_I が_S く_B く_E く_I く_S け_B け_E け_I け_S こ_B こ_E こ_I こ_S さ_B さ_E さ_I さ_S し_B し_E し_I し_S じ_B じ_E じ_I じ_S す_B す_E す_I す_S ぜ_B ぜ_E ぜ_I ぜ_S た_B た_E た_I た_S だ_B だ_E だ_I だ_S ち_B ち_E ち_I ち_S っ_B っ_E っ_I っ_S つ_B つ_E つ_I つ_S で_B で_E で_I で_S ど_B ど_E ど_I ど_S な_B な_E な_I な_S ね_B ね_E ね_I ね_S の_B の_E の_I の_S ひ_B ひ_E ひ_I ひ_S ほ_B ほ_E ほ_I ほ_S ま_B ま_E ま_I ま_S ゃ_B ゃ_E ゃ_I ゃ_S よ_B よ_E よ_I よ_S ら_B ら_E ら_I ら_S り_B り_E り_I り_S れ_B れ_E れ_I れ_S わ_B わ_E わ_I わ_S ん_B ん_E ん_I ん_S
+あ_B い_B う_B お_B か_B が_B く_B け_B こ_B さ_B し_B じ_B す_B ぜ_B た_B だ_B ち_B っ_B つ_B で_B ど_B な_B ね_B の_B ひ_B ほ_B ま_B ゃ_B よ_B ら_B り_B れ_B わ_B ん_B 
+あ_E い_E う_E お_E か_E が_E く_E け_E こ_E さ_E し_E じ_E す_E ぜ_E た_E だ_E ち_E っ_E つ_E で_E ど_E な_E ね_E の_E ひ_E ほ_E ま_E ゃ_E よ_E ら_E り_E れ_E わ_E ん_E 
+あ_I い_I う_I お_I か_I が_I く_I け_I こ_I さ_I し_I じ_I す_I ぜ_I た_I だ_I ち_I っ_I つ_I で_I ど_I な_I ね_I の_I ひ_I ほ_I ま_I ゃ_I よ_I ら_I り_I れ_I わ_I ん_I 
+あ_S い_S う_S お_S か_S が_S く_S け_S こ_S さ_S し_S じ_S す_S ぜ_S た_S だ_S ち_S っ_S つ_S で_S ど_S な_S ね_S の_S ひ_S ほ_S ま_S ゃ_S よ_S ら_S り_S れ_S わ_S ん_S 
+sil spn 
+sil_B spn_B 
+sil_E spn_E 
+sil_I spn_I 
+sil_S spn_S 

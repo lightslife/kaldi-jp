@@ -1,0 +1,18 @@
+# gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/tri1/graph/words.txt exp/tri1/final.mdl exp/tri1/graph/HCLG.fst "ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split6/3/utt2spk scp:data/test/split6/3/cmvn.scp scp:data/test/split6/3/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark:|gzip -c > exp/tri1/decode_test/lat.3.gz" 
+# Started at Thu May 10 00:25:10 HKT 2018
+#
+gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/tri1/graph/words.txt exp/tri1/final.mdl exp/tri1/graph/HCLG.fst 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split6/3/utt2spk scp:data/test/split6/3/cmvn.scp scp:data/test/split6/3/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark:|gzip -c > exp/tri1/decode_test/lat.3.gz' 
+apply-cmvn --utt2spk=ark:data/test/split6/3/utt2spk scp:data/test/split6/3/cmvn.scp scp:data/test/split6/3/feats.scp ark:- 
+add-deltas ark:- ark:- 
+LOG (apply-cmvn[5.3.4~1340-b701]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 3 utterances, errors on 0
+jp10-speaker015-08 た す か り ま す 
+LOG (gmm-latgen-faster[5.3.4~1340-b701]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:286) Log-like per frame for utterance jp10-speaker015-08 is -7.21818 over 135 frames.
+jp10-speaker016-02 が っ か り だ よ 
+LOG (gmm-latgen-faster[5.3.4~1340-b701]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:286) Log-like per frame for utterance jp10-speaker016-02 is -7.54853 over 113 frames.
+jp10-speaker020-10 つ か り ま し た 
+LOG (gmm-latgen-faster[5.3.4~1340-b701]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:286) Log-like per frame for utterance jp10-speaker020-10 is -7.74858 over 97 frames.
+LOG (gmm-latgen-faster[5.3.4~1340-b701]:main():gmm-latgen-faster.cc:176) Time taken 0.199227s: real-time factor assuming 100 frames/sec is 0.057747
+LOG (gmm-latgen-faster[5.3.4~1340-b701]:main():gmm-latgen-faster.cc:179) Done 3 utterances, failed for 0
+LOG (gmm-latgen-faster[5.3.4~1340-b701]:main():gmm-latgen-faster.cc:181) Overall log-likelihood per frame is -7.47551 over 345 frames.
+# Accounting: time=0 threads=1
+# Ended (code 0) at Thu May 10 00:25:10 HKT 2018, elapsed time 0 seconds

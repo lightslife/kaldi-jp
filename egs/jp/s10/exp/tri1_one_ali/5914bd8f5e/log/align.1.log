@@ -1,0 +1,34 @@
+# compile-train-graphs --read-disambig-syms=data/lang/phones/disambig.int exp/tri1_one_ali/5914bd8f5e/tree exp/tri1_one_ali/5914bd8f5e/final.mdl data/lang/L.fst "ark:utils/sym2int.pl --map-oov 3 -f 2- data/lang/words.txt data/5914bd8f5e/split1/1/text|" ark:- | gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 --careful=false "gmm-boost-silence --boost=1.25 1 exp/tri1_one_ali/5914bd8f5e/final.mdl - |" ark:- "ark,s,cs:apply-cmvn  --utt2spk=ark:data/5914bd8f5e/split1/1/utt2spk scp:data/5914bd8f5e/split1/1/cmvn.scp scp:data/5914bd8f5e/split1/1/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark,t:|gzip -c >exp/tri1_one_ali/5914bd8f5e/ali.1.gz" 
+# Started at Fri May 18 09:36:28 HKT 2018
+#
+compile-train-graphs --read-disambig-syms=data/lang/phones/disambig.int exp/tri1_one_ali/5914bd8f5e/tree exp/tri1_one_ali/5914bd8f5e/final.mdl data/lang/L.fst 'ark:utils/sym2int.pl --map-oov 3 -f 2- data/lang/words.txt data/5914bd8f5e/split1/1/text|' ark:- 
+gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 --careful=false 'gmm-boost-silence --boost=1.25 1 exp/tri1_one_ali/5914bd8f5e/final.mdl - |' ark:- 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/5914bd8f5e/split1/1/utt2spk scp:data/5914bd8f5e/split1/1/cmvn.scp scp:data/5914bd8f5e/split1/1/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark,t:|gzip -c >exp/tri1_one_ali/5914bd8f5e/ali.1.gz' 
+gmm-boost-silence --boost=1.25 1 exp/tri1_one_ali/5914bd8f5e/final.mdl - 
+sym2int.pl: replacing がっかり with 3
+** Replaced 1 instances of OOVs with 3
+LOG (compile-train-graphs[5.3.4~1340-b701]:main():compile-train-graphs.cc:147) compile-train-graphs: succeeded for 1 graphs, failed for 0
+WARNING (gmm-boost-silence[5.3.4~1340-b701]:main():gmm-boost-silence.cc:82) The pdfs for the silence phones may be shared by other phones (note: this probably does not matter.)
+LOG (gmm-boost-silence[5.3.4~1340-b701]:main():gmm-boost-silence.cc:93) Boosted weights for 5 pdfs, by factor of 1.25
+LOG (gmm-boost-silence[5.3.4~1340-b701]:main():gmm-boost-silence.cc:103) Wrote model to -
+add-deltas ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/5914bd8f5e/split1/1/utt2spk scp:data/5914bd8f5e/split1/1/cmvn.scp scp:data/5914bd8f5e/split1/1/feats.scp ark:- 
+LOG (apply-cmvn[5.3.4~1340-b701]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 1 utterances, errors on 0
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) answer
+ERROR (gmm-align-compiled[5.3.4~1340-b701]:LogLikelihoodZeroBased():decodable-am-diag-gmm.cc:50) Dim mismatch: data dim = 39 vs. model dim = 48
+
+[ Stack-Trace: ]
+gmm-align-compiled() [0xae2504]
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::DecodableAmDiagGmmUnmapped::LogLikelihoodZeroBased(int, int)
+kaldi::DecodableAmDiagGmmScaled::LogLikelihood(int, int)
+kaldi::FasterDecoder::ProcessEmitting(kaldi::DecodableInterface*)
+kaldi::FasterDecoder::Decode(kaldi::DecodableInterface*)
+kaldi::AlignUtteranceWrapper(kaldi::AlignConfig const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, float, fst::VectorFst<fst::ArcTpl<fst::TropicalWeightTpl<float> >, fst::VectorState<fst::ArcTpl<fst::TropicalWeightTpl<float> >, std::allocator<fst::ArcTpl<fst::TropicalWeightTpl<float> > > > >*, kaldi::DecodableInterface*, kaldi::TableWriter<kaldi::BasicVectorHolder<int> >*, kaldi::TableWriter<kaldi::BasicHolder<float> >*, int*, int*, int*, double*, long*, kaldi::TableWriter<kaldi::KaldiObjectHolder<kaldi::Vector<float> > >*)
+main
+__libc_start_main
+_start
+
+WARNING (gmm-align-compiled[5.3.4~1340-b701]:~HashList():util/hash-list-inl.h:117) Possible memory leak: 1023 != 1024: you might have forgotten to call Delete on some Elems
+# Accounting: time=0 threads=1
+# Ended (code 255) at Fri May 18 09:36:28 HKT 2018, elapsed time 0 seconds

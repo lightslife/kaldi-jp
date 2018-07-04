@@ -1,0 +1,78 @@
+# compile-train-graphs --read-disambig-syms=data/lang/phones/disambig.int exp/mono_ali/tree exp/mono_ali/final.mdl data/lang/L.fst "ark:utils/sym2int.pl --map-oov 3 -f 2- data/lang/words.txt data/train/split6/4/text|" ark:- | gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 --careful=false "gmm-boost-silence --boost=1.25 1 exp/mono_ali/final.mdl - |" ark:- "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split6/4/utt2spk scp:data/train/split6/4/cmvn.scp scp:data/train/split6/4/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark,t:|gzip -c >exp/mono_ali/ali.4.gz" 
+# Started at Thu May 10 00:24:56 HKT 2018
+#
+compile-train-graphs --read-disambig-syms=data/lang/phones/disambig.int exp/mono_ali/tree exp/mono_ali/final.mdl data/lang/L.fst 'ark:utils/sym2int.pl --map-oov 3 -f 2- data/lang/words.txt data/train/split6/4/text|' ark:- 
+gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 --careful=false 'gmm-boost-silence --boost=1.25 1 exp/mono_ali/final.mdl - |' ark:- 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split6/4/utt2spk scp:data/train/split6/4/cmvn.scp scp:data/train/split6/4/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark,t:|gzip -c >exp/mono_ali/ali.4.gz' 
+gmm-boost-silence --boost=1.25 1 exp/mono_ali/final.mdl - 
+WARNING (gmm-boost-silence[5.3.4~1340-b701]:main():gmm-boost-silence.cc:82) The pdfs for the silence phones may be shared by other phones (note: this probably does not matter.)
+LOG (gmm-boost-silence[5.3.4~1340-b701]:main():gmm-boost-silence.cc:93) Boosted weights for 5 pdfs, by factor of 1.25
+LOG (gmm-boost-silence[5.3.4~1340-b701]:main():gmm-boost-silence.cc:103) Wrote model to -
+apply-cmvn --utt2spk=ark:data/train/split6/4/utt2spk scp:data/train/split6/4/cmvn.scp scp:data/train/split6/4/feats.scp ark:- 
+add-deltas ark:- ark:- 
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker022-08
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker022-09
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker022-10
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker023-01
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker023-02
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker023-03
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker023-04
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker023-05
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker023-06
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker023-07
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker023-08
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker023-09
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker024-01
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker024-02
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker024-03
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker024-05
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker024-06
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker024-07
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker024-08
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker024-09
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker024-10
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker025-01
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker025-02
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker025-03
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker025-04
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker025-05
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker025-06
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker025-07
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker025-08
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker025-09
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker025-10
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker026-01
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker026-02
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker026-03
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker026-04
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker026-05
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker026-07
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker026-09
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker026-10
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker027-01
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker027-02
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker027-03
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker027-04
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker027-05
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker027-06
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker027-07
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker027-08
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker027-09
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker027-10
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker028-01
+LOG (apply-cmvn[5.3.4~1340-b701]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 60 utterances, errors on 0
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker028-02
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker028-03
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker028-04
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker028-05
+LOG (compile-train-graphs[5.3.4~1340-b701]:main():compile-train-graphs.cc:147) compile-train-graphs: succeeded for 60 graphs, failed for 0
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker028-06
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker028-07
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker028-08
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker028-09
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker028-10
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:127) jp10-speaker029-01
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:135) Overall log-likelihood per frame is -78.9498 over 8814 frames.
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:137) Retried 0 out of 60 utterances.
+LOG (gmm-align-compiled[5.3.4~1340-b701]:main():gmm-align-compiled.cc:139) Done 60, errors on 0
+# Accounting: time=1 threads=1
+# Ended (code 0) at Thu May 10 00:24:57 HKT 2018, elapsed time 1 seconds
