@@ -1,7 +1,0 @@
-# sum-tree-stats exp/tri2/treeacc exp/tri2/1.treeacc exp/tri2/2.treeacc exp/tri2/3.treeacc exp/tri2/4.treeacc exp/tri2/5.treeacc exp/tri2/6.treeacc 
-# Started at Thu May 10 00:25:12 HKT 2018
-#
-sum-tree-stats exp/tri2/treeacc exp/tri2/1.treeacc exp/tri2/2.treeacc exp/tri2/3.treeacc exp/tri2/4.treeacc exp/tri2/5.treeacc exp/tri2/6.treeacc 
-LOG (sum-tree-stats[5.3.4~1340-b701]:main():sum-tree-stats.cc:88) Wrote summed accs ( 407 individual stats)
-# Accounting: time=0 threads=1
-# Ended (code 0) at Thu May 10 00:25:12 HKT 2018, elapsed time 0 seconds

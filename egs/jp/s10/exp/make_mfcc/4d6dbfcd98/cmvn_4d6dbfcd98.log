@@ -1,2 +1,0 @@
-compute-cmvn-stats --spk2utt=ark:data/4d6dbfcd98/spk2utt scp:data/4d6dbfcd98/feats.scp ark,scp:/home/newtranx_voice/github/kaldi-jp/egs/jp/s10/mfcc_one/4d6dbfcd98/cmvn_4d6dbfcd98.ark,/home/newtranx_voice/github/kaldi-jp/egs/jp/s10/mfcc_one/4d6dbfcd98/cmvn_4d6dbfcd98.scp 
-LOG (compute-cmvn-stats[5.3.4~1340-b701]:main():compute-cmvn-stats.cc:171) Done accumulating CMVN stats for 1 utterances; 0 had errors.
