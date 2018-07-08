@@ -65,7 +65,8 @@ cp $usedir/* $data_all_dir/
 
 rm -rf data/train
 rm -rf data/test
-utils/subset_data_dir_tr_cv.sh --cv-spk-percent 5 data/data_all data/train data/test
+utils/data/fix_data_dir.sh data/data_all
+utils/subset_data_dir_tr_cv.sh --cv-spk-percent 25 data/data_all data/train data/test
 
 arpa2fst data/local/lm_tmp/temp.lm  | fstprint | \
 utils/remove_oovs.pl data/lang_test/oovs.txt | \
