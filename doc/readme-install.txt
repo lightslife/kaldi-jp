@@ -8,6 +8,7 @@
 (2) 编译依赖工具
 执行 make -j 8
 完成后将显示 all done
+根据脚本安装srilm，脚本为install_srilm.sh
 
 (3) 编译源码
 进入src目录
